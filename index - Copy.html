@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #868686;
+            color: #cacaca;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #868686;
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #000000;
+        }
+        nav a {
+            color: rgb(255, 255, 255);
+            padding: 15px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #000000;
+        }
+
+        section {
+            display: none; 
+            padding: 50px 20px;
+            margin: 20px;
+        }
+        section h2 {
+            color: #252525;
+        }
+
+        #about {
+            display: block;
+        }
+
+        section img {
+            width: 50%;
+            max-width: 300px;
+            margin: 10px 0;
+            border-radius: 20px;
+        }
+
+        .skills, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .skill, .project {
+            background-color: rgb(15, 15, 15);
+            padding: 20px;
+            margin: 10px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(108, 107, 107, 0.1);
+        }
+        .skill h3, .project h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav a.active {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LUIS KRISTIAN SALVADOR WEBSITE</h1>
+        <p> MY LIFE PORTFOLIO</p>
+    </header>
+
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('about')" class="active">ABOUT ME</a>
+        <a href="javascript:void(0);" onclick="showSection('skills')">Skills</a>
+        <a href="javascript:void(0);" onclick="showSection('projects')">Projects</a>
+        <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
+        <a href="javascript:void(0);" onclick="showSection('academic')">Academic & Training</a>
+        <a href="javascript:void(0);" onclick="showSection('blogs')">Blogs</a>
+        <a href="javascript:void(0);" onclick="showSection('testimonials')">Testimonials</a>
+    </nav>
+
+    <section id="about">
+        <h2>ABOUT ME</h2>
+        <head>
+            <title>Image</title>
+        </head>
+        <body>
+            <img src="kian.jpg"
+            width= "100px" height="400px">
+        </body>
+        <p>Hi!I am LUIS KISTIAN SALVADOR A BSIT STUDENT. From TUNGEL, Baggao, Cagayan Zone 2.</p>
+    </section>
+
+    <section id="skills">
+        <h2>SKILLS</h2>
+        <img src="skills-image.jpg" alt="Skills Image">
+        <div class="skills">
+            <div class="skill">
+                <p>COMING SOON</p>
+            </div>
+            <div class="skill">
+                
+                <p>COMING SOON</p>
+            </div>
+            <div class="skill">
+                
+                <p>COMING SOON</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>PROJECTS</h2>
+        <img src="projects-image.jpg" alt="Projects Image">
+        <div class="projects">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>COMING SOON</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>COMING SOON</p>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <p>COMING SOON</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>CONTACT</h2>
+        <img src="contact-image.jpg" alt="Contact Image">
+        <p>If you'd like to work with me or have any questions, feel free to reach out!</p>
+        <ul>
+            <li>Email:nenelutang1210@gmail.com</li>
+            
+        </ul>
+    </section>
+
+    <section id="academic">
+        <h2>ACADEMIC & TRAININGS</h2>
+        <img src="academic-image.jpg" alt="Academic Image">
+        <p>COMING SOON</p>
+        <ul>
+        </ul>
+    </section>
+
+    <section id="blogs">
+        <h2>BLOGS</h2>
+        <img src="blogs-image.jpg" alt="Blogs Image">
+        <p>COMING SOON</p>
+        <ul>
+        </ul>
+    </section>
+
+    <section id="testimonials">
+        <h2>TESTIMONIALS</h2>
+        <img src="testimonials-image.jpg" alt="Testimonials Image">
+        <p>COMING SOON</p>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2025 LUIS KRISTIAN SALVADOR WEBSITE. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+
+            document.getElementById(sectionId).style.display = 'block';
+
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => link.classList.remove('active'));
+            const activeLink = [...links].find(link => link.innerText.toLowerCase() === sectionId);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+        showSection('about');
+    </script>
+</body>
+</html>
